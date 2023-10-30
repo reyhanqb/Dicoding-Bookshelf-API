@@ -189,7 +189,7 @@ const editBooks = (request, h) => {
       message: "Gagal memperbarui buku. Id tidak ditemukan",
     });
 
-    response.code(400);
+    response.code(404);
 
     return response;
   }
@@ -211,15 +211,7 @@ const editBooks = (request, h) => {
     response.code(400);
 
     return response;
-  } else if (index === -1) {
-    let response = h.response({
-      status: "fail",
-      message: "Buku tidak ditemukan",
-    });
-    response.code(404);
-
-    return response;
-  } else {
+  }  else {
     book[index] = {
       ...book[index],
       name,
