@@ -18,8 +18,6 @@ const addBooksHandler = (request, h) => {
   const updatedAt = insertedAt;
   const finished = readPage === pageCount;
 
-  console.log("hello world!")
-
   if (readPage > pageCount) {
     let response = h.response({
       status: "fail",
